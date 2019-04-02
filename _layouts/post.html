@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        {% include lefttree.html %}
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+          <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="meta">发布时间：<span class="postdate">{{ page.date | date: "%Y年%m月%d日 %H:%M" }}</span> 作者：<a
+                target="_blank" href="{{site.url}}">{{ site.author }}</a>
+            </div>
+            <br />
+          </header>
+          <article class="post-content">
+            {{ content }}
+          </article>
+          {% include gitalk.html %}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

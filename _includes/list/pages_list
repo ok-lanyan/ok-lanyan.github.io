@@ -1,0 +1,24 @@
+{% for node in pages_list %}
+  {% if node.title != null %}
+    {% if group == null or group == node.group %}
+    	{% if page.url == node.url %}
+			<ol class="breadcrumb">
+        <li>
+					<span>{{ node.date | date: "%m月%e日  " }}</span> &raquo; 
+          <a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+				</li>
+      </ol>
+
+    	{% else %}
+			<ol class="breadcrumb">
+        <li>
+				  <span>{{ node.date | date: "%m月%e日  " }}</span> &raquo; 
+          <a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+				</li>
+      </ol>
+    	{% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign pages_list = nil %}
+{% assign group = nil %}

@@ -1,0 +1,34 @@
+# Site settings
+name: Becky's Home
+email: ok_lanyan@163.com
+author: Becky
+url: 
+github: 
+baseurl: ""
+description: 
+meta_description: 
+motto: 
+banner: 
+github_username: ok-lanyan
+
+# permalink: /:categories/:year/:month/:day/:title/
+permalink: /:year/:month/:day/:title.html
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']
+
+# gitalk评论插件参数
+gitalk:
+  clientID: 515d1b8811309d7fa2f5
+  clientSecret: c6486ffac1517365e50d5cb92e384c4ba99667df
+  repo: ok-lanyan.github.io
+  owner: ok-lanyan
+  admin: ok-lanyan
+  pagerDirection: first
+  enable: true
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
