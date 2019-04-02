@@ -26,6 +26,9 @@ gitalk:
   pagerDirection: first
   enable: true
 
+# 百度统计参数
+baidu-analysis: f4919f27754ae660858d9800ced310bb
+
 # Build settings
 markdown: kramdown
 

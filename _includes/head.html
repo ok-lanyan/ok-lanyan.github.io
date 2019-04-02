@@ -21,16 +21,19 @@
 	<script src="{{ '/styles/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 	<!--[if lt IE 9]>
     	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  	<![endif]-->
-	<script>
+	  <![endif]-->
+	  
+	  <!--百度统计-->
+	  <script>
 		var _hmt = _hmt || [];
-		(function () {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
 		})();
-	</script>
+		</script>
+		
 	<style type="text/css">
 		.docs-content {
 			margin-bottom: 10px;
