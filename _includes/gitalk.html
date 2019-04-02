@@ -11,6 +11,7 @@
         owner: 'ok-lanyan',          // 仓库的创建者，
         admin: 'ok-lanyan',        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
         id: location.pathname,
+        id: md5(location.pathname),
 
 
         // clientID: '{{ site.gitalk.clientID }}',
