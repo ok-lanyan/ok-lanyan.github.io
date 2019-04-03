@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://ok-lanyan.github.io/</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/categories/</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/2019/03/20/VPS%E6%90%AD%E5%BB%BAShadowsocks%E6%9C%8D%E5%8A%A1.html</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/2018/08/20/%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86-%E8%8A%AD%E8%8A%AD%E6%8B%89-%E6%98%8E%E6%89%98.html</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/2018/07/29/Web%E8%A1%A8%E5%8D%95%E8%AE%BE%E8%AE%A1-Luke-Wroblewski.html</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/2018/04/13/%E5%85%B3%E9%94%AE%E5%AF%B9%E8%AF%9D-Kerry-Patterson.html</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ok-lanyan.github.io/tag/</loc>
+  <lastmod>2019-04-03T08:52:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
