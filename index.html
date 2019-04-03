@@ -15,7 +15,8 @@ layout: default
             {% capture next_year %}{{ post.previous.date | date: "%Y年" }}{% endcapture %}
             {% capture next_month %}{{ post.previous.date | date: "%m月" }}{% endcapture %}
             {% if forloop.first %}
-            <li><a href="#year_{{this_year}}">{{this_year}}</a>
+            <li>
+              <a href="#year_{{this_year}}">{{this_year}}</a>
               <ul class="nav">
                 <li><a href="#month_{{this_year}}_{{this_month}}">{{this_month}}</a></li>
                 {% endif %}
@@ -25,8 +26,9 @@ layout: default
             {% else %}
             {% if this_year != next_year %}
           </ul>
-          </li>
-          <li><a href="#year_{{next_year}}">{{next_year}}</a>
+          
+          <li>
+            <a href="#year_{{next_year}}">{{next_year}}</a>
             <ul class="nav">
               <li><a href="#month_{{next_year}}_{{next_month}}">{{next_month}}</a></li>
               {% else %}
@@ -40,6 +42,7 @@ layout: default
         </div>
       </div>
     </div>
+
     <div class="col-md-9" role="main">
       <div class="panel docs-content">
         <div class="wrapper">

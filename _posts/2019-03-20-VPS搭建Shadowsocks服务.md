@@ -25,23 +25,31 @@ __本文的环境搭建在CentOS上，已具体说明如何在CentOS6和CentOS7�
 
 在以前，我们访问互联网的资源都是简单而直接的，用户的请求发送到资源服务方，比如Google、Facebook等，然后资源服务方直接将内容响应给用户，世界多么美好。
 
-![](/styles/images/20190320-vps-build-ss/0101.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0101.png"
+    caption="" %}
 
 但是，在1998年时候，中国创建了互联网边界审查系统，称之为中国国家防火墙（GFW），这堵墙横在了用户和互联网资源服务方之间，用于监控和过滤互联网国际出口上的内容，监控国际网关的通讯，对认为不匹配国家官方要求的传输内容，进行干扰、阻断、屏蔽。
 
-![](/styles/images/20190320-vps-build-ss/0102.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0102.png"
+    caption="" %}
 
 从此之后好多有价值的网站就被堵在了墙后。
 
 人们想到了绕过GFW的办法，那就是在境外搭建一个国内用户的代理，国内用户与代理之间建立加密的通道，由境外代理请求被墙的网络资源，再通过加密通道返回给国内用户。代理的类型也有多种，像HTTP、Socks、VPN、SSH等。以SSH隧道为例：
 
-![](/styles/images/20190320-vps-build-ss/0103.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0103.png"
+    caption="" %}
 
 因为SSH本身基于RSA加密技术，所以GFW就无法对数据传输过程加密的数据进行分析，从而避免被重置链接、阻断、屏蔽等问题。
 
 但是GFW也不会懵B一世，人家也会学习，由于在创建SSH隧道的过程中有较为明显的特性，所以GFW还是可以通过分析连接的特性进行干扰。
 
-![](/styles/images/20190320-vps-build-ss/0104.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0104.png"
+    caption="" %}
 
 于是SS横空出世，分为客户端和服务端，确保经过GFW时是普通的TCP协议数据包，没有明显的特征，而且GFW也无法解密分析，从而实现绕墙访问资源。从技术上保证不会被和谐掉，安全性较高。
 
@@ -54,14 +62,16 @@ __本文的环境搭建在CentOS上，已具体说明如何在CentOS6和CentOS7�
 
 网上找了一些[VPS测评文章](http://www.vpsdaquan.cn/vpslinodedovultrhengxiangceping.html)之后，选择尝试提供商Vultr，并在[Vultr](https://www.vultr.com/?ref=7972636-4F)上完成注册和充值。
 
-![](/styles/images/20190320-vps-build-ss/0201.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0201.png"
+    caption="" %}
 
 Vultr采用计时收费模式，按使用时长扣费（以每小时为单位），也就是说使用一个小时就会扣除一小时的费用。停止计费的办法只有一个，就是“__Server Destroy__”彻底删除VPS，而“Server Stop”依旧占用IP，无法停止计费。
 
 三、搭建SS服务端  {#BuildSS}
 ============================
 
-首先部署服务器(Deploy new servers)，然后在该服务器上安装SS服务端并配置参数。要留意是在服务器上，而不是本地~  血的教训……
+首先部署服务器（Deploy new servers），然后在该服务器上安装SS服务端并配置参数。要留意是在服务器上，而不是本地~  血的教训……
 ## 3.1 创建服务器（Deploy new servers） {#deploy}
 1. 选择Server所在的物理位置，可以随意选择东京、芝加哥等。
 
@@ -70,7 +80,9 @@ Tips：留意Snapshots快照备份功能，可以选择已有备份，免去重�
 
 3. 选择大小，根据不同需求，我选了25G $5/月。直接Deploy Now，服务器就创建好了。
 
-![](/styles/images/20190320-vps-build-ss/0301.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0301.png"
+    caption="" %}
 
 ## 3.2 测试IP是否被封
 
@@ -197,7 +209,9 @@ net.ipv4.tcp_fin_timeout = 5 # 修改系统默认的超时时间
 1. 下载并安装ShadowsocksX-NG：[Mac下载地址](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
 
 2. 将3.3中的配置参数输入对应框中，并将选择当前新建的服务器进行连接。
-![](/styles/images/20190320-vps-build-ss/0401.png)
+{% include image.html
+    img="/styles/images/20190320-vps-build-ss/0401.png"
+    caption="" %}
 
 3. 用浏览器连谷歌，能正常连接的，就大功告成啦！
 
