@@ -26,7 +26,33 @@ layout: default
           {% include gitalk.html %}
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
+<script>
+  document.body.addEventListener('copy', function (e) {
+    if (window.getSelection().toString() && window.getSelection().toString().length > 10) {
+      setClipboardText(e);
+    }
+  });
+  function setClipboardText(event) {
+    var clipboardData = event.clipboardData || window.clipboardData;
+    if (clipboardData) {
+      event.preventDefault();
+      var htmlData = window.getSelection().toString()
+        + '<br /><br />著作权归作者所有。<br />'
+        + '商业转载请联系作者获得授权，非商业转载请注明出处。<br />'
+        + '作者：{{ site.author }}<br />'
+        + '永久链接：' + window.location.href;
+      var textData = window.getSelection().toString()
+        + '\n\n著作权归作者所有。\n'
+        + '商业转载请联系作者获得授权，非商业转载请注明出处。\n'
+        + '作者：{{ site.author }}\n'
+        + '永久链接：' + window.location.href;
+
+      clipboardData.setData('text/html', htmlData);
+      clipboardData.setData('text/plain', textData);
+    }
+  }
+</script>
