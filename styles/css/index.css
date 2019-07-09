@@ -3240,7 +3240,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .nav {
   margin-bottom: 0;
-  padding-left: 0;
+  padding-left: 15px;/* 目录树的二三四级 向右缩进*/
   list-style: none;
 }
 .nav:before,
@@ -3271,7 +3271,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .docs-nav .navbar-nav > li > span {
   position: relative;
   display: block;
-  padding: 10px 15px;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -6321,37 +6320,42 @@ hr {
 .callout-danger h4 {
   color: #b94a48;
 }
-.docs-header,
+
 .docs-home {
   color: #b9c8e0;
   background-color: #1d365d;
 }
+
 /* Page headers */
 .docs-header {
+  background-color: #1d365d;
   padding: 30px 15px 50px;
   /* side padding builds on .container 15px, so 30px */
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-}
-.docs-header h1 {
+
+  text-align: left;
+  text-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
   color: #fff;
 }
+
 .docs-header p {
-  font-weight: 300;
+  font-weight: normal;
+  padding-top: 20px;
   line-height: 1.5;
 }
 .docs-header .container {
   position: relative;
 }
+/* 电脑屏幕显示*/
 @media (min-width: 768px) {
+  /* 座右铭的格式 */
   .docs-header {
     font-size: 21px;
     text-align: left;
   }
+  /* 博客名字的格式 */
   .docs-header h1 {
-    font-size: 60px;
-    line-height: 1;
+    font-size: 48px;
+    line-height: 0;
   }
 }
 @media (min-width: 992px) {
@@ -6422,27 +6426,55 @@ hr {
   position: relative;
   overflow: hidden;
   background: #fff;
-  background-color: #fff;
-  padding: 1px 60px 80px 60px;
-  margin: 0 -15px;
+  padding: 10px 50px 50px 50px;
   border: none;
   border-radius: 0 0 4px 4px;
+  line-height: 1.5;
+  font-size: 16px;
+  
 }
-.docs-content .container-fluid {
-  padding: 0;
+/* 正文 加粗样式*/
+.docs-content strong{
+  font-weight:bold;
+  color:#d0b207;
+  text-shadow:unset;
 }
+.docs-content blockquote{
+  font-size: 16px;
+  line-height: 2;
+  background-color: #f5d1073f;
+  border-left: 1em solid #f5d107ad;
+}
+
 .docs-content {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+.docs-content h{
+  font-size: 40px;
+  font-weight:bold;
+  margin-top: 100px;
+}
+
+.docs-content h1{
+  font-size: 28px;
+}
+.docs-content h2{
+  font-size: 24px;
+}
+.docs-content h3{
+  font-size: 20px;
+}
+.docs-content h4{
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .docs-section + .docs-section {
   padding-top: 40px;
 }
 .sidebar {
   display: none;
-}
-.sidebar.affix {
-  position: static;
 }
 /* First level of nav */
 .sidenav {
@@ -6458,13 +6490,14 @@ hr {
 .sidebar .nav > li > a {
   display: block;
   color: #36556e;
-  padding: 5px 20px;
+  padding-top: 10px;
+  padding-bottom: 10px; /* 一级目录的 padding*/
 }
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
   text-decoration: none;
   background-color: #e8ebee;
-  border-right: 1px solid #d8dde2;
+  border-right: 10px solid #d8dde2;
 }
 .sidebar .nav > .active > a,
 .sidebar .nav > .active:hover > a,
@@ -6475,11 +6508,11 @@ hr {
   border-right: 1px solid #1d365d;
 }
 .sidebar .nav .nav {
-  display: none;
-  margin-bottom: 8px;
+  display: block;/* none 滚动显示 block 一次性显示*/
 }
 .sidebar .nav .nav > li > a {
-  padding: 3px 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   font-size: 90%;
 }
 .sidebar .glyphicon {
@@ -6496,7 +6529,7 @@ hr {
   }
   .sidebar.affix,
   .sidebar.affix-bottom {
-    width: 213px;
+    width: 260px;
   }
   .sidebar.affix {
     position: fixed;
@@ -6505,16 +6538,17 @@ hr {
   .sidebar.affix-bottom {
     position: absolute;
   }
+
+  /* 目录树的整体移动 */
   .sidebar.affix .sidenav,
   .sidebar.affix-bottom .sidenav {
-    margin-top: 10px;
-    margin-bottom: 0;
+    margin-left: -10px;
   }
 }
 @media (min-width: 1200px) {
   .sidebar.affix-bottom,
   .sidebar.affix {
-    width: 263px;
+    width: 260px;
   }
 }
 .docs-nav {

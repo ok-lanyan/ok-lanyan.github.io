@@ -1,5 +1,6 @@
 /*!
  * Adapted from Bootstrap docs JavaScript
+ * 自适应目录树到左边
  */
 
 

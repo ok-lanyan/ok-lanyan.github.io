@@ -12,7 +12,7 @@ unless IO.method_defined? :each_char
           case leftmost_zero_bit
           when 7 # ASCII
             yield c
-          when 6 # UTF 8 complementary characters
+          when 6 # UTF 8  characters
             next # Encoding error, ignore
           else
             more = read(6-leftmost_zero_bit)

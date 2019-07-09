@@ -11,9 +11,10 @@ motto:
 banner: 
 github_username: ok-lanyan
 
-# permalink: /:categories/:year/:month/:day/:title/
-permalink: /:year/:month/:day/:title.html
+# 最终输出的路径URL的格式
+permalink: /:year-:month-:day/:title.html
 
+# 忽略不想被jekyll处理的文件
 exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile', 'vendor']
 
 # gitalk评论插件参数
@@ -26,11 +27,10 @@ gitalk:
   pagerDirection: first
   enable: true
 
-
-
 # Build settings
 markdown: kramdown
 
+# 安装使用的插件
 plugins:
   - jekyll-seo-tag
   - jekyll-feed

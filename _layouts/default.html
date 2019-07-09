@@ -1,19 +1,97 @@
 <!DOCTYPE html>
 <html>
 
-{% include head.html %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title | append: ' - ' |append: site.name }}</title>
+  {% seo %}
+  <link rel="shortcut icon" href="{{ '/styles/images/favicon.ico' | prepend: site.baseurl }}" type="image/x-icon">
+  <link rel="icon" href="{{ '/styles/images/favicon.ico' | prepend: site.baseurl }}" type="image/x-icon">
+
+  <link rel="stylesheet" href="{{ '/styles/css/index.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/styles/css/fontawesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/styles/css/syntax.css' | prepend: site.baseurl }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }}"
+    href="{{ '/feed.xml' | prepend: site.baseurl }}">
+
+  <meta name="keywords"
+    content="{{ page.title | append: ', ' | append: site.name | append: ', ' | append: site.meta_description}}">
+  <meta name="description" content="{{site.meta_description}}">
+
+  <script src="{{ '/styles/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+
+  <!--百度 谷歌的收录 标签验证-->
+  <meta name="google-site-verification" content="JhR5PR5Jw0xIHdVxRt6QzwF3ulml8AaaPiEzWDmNhto" />
+  <meta name="baidu-site-verification" content="40321weewG" />
+
+  <!--百度统计-->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f4919f27754ae660858d9800ced310bb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
 
 <body class="index">
 
-  {% include header.html %}
-  {% include docs_header.html %}
-  {% if page.title %}
-  {% include banner.html %}
-  {% endif %}
+  <!-- 首页、分类目录、标签目录、RSS订阅的一整行-->
+  <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+    <div class="container">
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="{{ '/' | prepend: site.baseurl }}">首页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="{{ '/categories/' | prepend: site.baseurl }}">分类目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="{{ '/tag' | prepend: site.baseurl }}">标签目录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{{ '/feed.xml' | prepend: site.baseurl }}">RSS订阅</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+
+  <!--博客名称一行-->
+  <div class="docs-header" id="content">
+    <div class="container">
+      <h1>{{ site.name }}</h1>
+    </div>
+  </div>
+
+  <!-- 正文部分的内容 -->
   {{ content }}
 
-  {% include footer.html %}
+  <!-- 页脚 -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <p class="copyright">Copyright &copy; 2018-{{ site.time | date: '%Y' }}
+        <a href="{{site.url}}">
+          <code>{{ site.author }}</code>
+        </a>.</p>
+      <p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, themed from <a href="http://lesscss.cn/">Less</a></p>
+    </div>
+  </footer>
+
+  <script src="{{ '/styles/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/styles/js/bootstrap.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/styles/js/holder.min.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/styles/js/lessismore.js' | prepend: site.baseurl }}"></script>
+  <script src="{{ '/styles/js/application.js' | prepend: site.baseurl }}"></script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 
