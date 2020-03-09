@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Web表单设计 -Luke Wroblewski
-date:   2018-07-29 13:48:00 +0800
+date:   2018-07-29
 categories: 读书笔记
 tags: 产品设计
 ---

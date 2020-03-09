@@ -21,11 +21,11 @@ layout: default
           <!-- 标题 -->
           <header class="post-header">
             <h class="post-title">{{ page.title }}</h>
-            
+           
             <!-- 作者 发布时间 -->
             <div>
-              <span>{{ page.date | date: "发布于：%Y年%m月%d日 %H:%M " }}</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;作者： <a target="_blank" href="{{site.url}}">{{ site.author }}</a>
+              <span>{{ page.date | date: "发布于：%Y年%m月%d日 " }}</span>
+              &nbsp;&nbsp;&nbsp;&nbsp;作者：<a target="_blank" href="{{site.url}}">{{ site.author }}</a>
             </div>
           </header>
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  关键对话 -Kerry Patterson
-date:   2018-04-13 13:23:00
+date:   2018-07-20
 categories: 读书笔记
 tags: 沟通
 ---
