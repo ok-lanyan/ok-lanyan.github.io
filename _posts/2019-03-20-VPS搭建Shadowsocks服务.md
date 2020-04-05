@@ -3,7 +3,7 @@ layout: post
 title:  VPS搭建Shadowsocks服务
 date:   2019-03-20
 categories: 教程
-tags: VPS Shadowsocks
+tags: VPS
 ---
 
 * content
